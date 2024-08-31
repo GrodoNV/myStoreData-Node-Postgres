@@ -33,4 +33,4 @@ function ormErrorHandler(err, req ,res , next){
 }
 
 
-module.exports = { logErrors, errorHandler, boomErrorHandler }
+module.exports = { logErrors, errorHandler, boomErrorHandler , ormErrorHandler}
