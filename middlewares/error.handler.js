@@ -1,4 +1,5 @@
 const validatorHandler = require("./validator.handler");
+const { ValidationError } = require('sequelize');
 
 function logErrors (err, req, res, next) {
   console.error(err);
@@ -28,8 +29,10 @@ function ormErrorHandler(err, req ,res , next){
       message: err.name,
       errors: err.errors
     })
+  }else{
+    next(err)
   }
-  next(err)
+
 }
 
 
